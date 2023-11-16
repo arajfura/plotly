@@ -84,7 +84,7 @@ describe('Plotly test spec', () => {
     cy.contains(constants.text.reviewAndDebug).should('be.visible')
   })
 
-  it('can verify green circle around "Test Analytics" after scrolling', () => {
+  it('can verify green border around "Test Analytics" after scrolling', () => {
     // Using a mouseover event, navigate to Product from the top menu
     cy.get(mainPage.mainMenu).within(() => {
       cy.get(mainPage.mainMenuProduct).trigger('mouseover')

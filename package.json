@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "test:e2e": "cypress run --browser chrome --spec 'cypress/e2e/test-spec.cy.js'"
+  },
+  "dependencies": {
+    "cypress": "^13.5.1",
+    "cypress-real-events": "^1.11.0",
+    "mocha": "^10.2.0"
+  }
+}

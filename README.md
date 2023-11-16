@@ -1,6 +1,6 @@
 # plotly
 
-This project is using Cypress.io, you'll need node to run it, as well as Chrome.
+This project is using Cypress.io, you'll need node to run it, as well as any supported browser (Chrome, Firefox, Edge).
 
 All dependencies are listed in package.json.
 

@@ -1,4 +1,4 @@
-const { defineConfig } = require("cypress");
+const { defineConfig } = require('cypress')
 
 module.exports = defineConfig({
   e2e: {
@@ -7,5 +7,5 @@ module.exports = defineConfig({
     },
   },
   requestTimeout: 15000,
-  retries: { "runMode": 1, "openMode": 0 }
-});
+  retries: { runMode: 1, openMode: 0 },
+})

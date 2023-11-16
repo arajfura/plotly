@@ -1,4 +1,4 @@
-const borderColourJade200 = 'border-jade-200' 
+const borderColourJade200 = 'border-jade-200'
 
 const endpoint = {
   index: 'https://www.cypress.io/_astro/index.01be2337.js',
@@ -27,9 +27,4 @@ const url = {
   testAnalytics: 'test_analytics',
 }
 
-export {
-  borderColourJade200,
-  endpoint,
-  text,
-  url
-}
+export { borderColourJade200, endpoint, text, url }

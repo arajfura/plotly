@@ -57,15 +57,15 @@ describe('Plotly test spec', () => {
           .click()
           .then(() => {
             cy.get(mainPage.modalLabel).should('contain', constants.text.installingCypress)
-            /** 
-            * Copy the text using the button on the "Installing Cypress" pop-up.
-            * Use realClick function from cypress-real-events repo,
-            * because regular click does not work.
-            */
+            /**
+             * Copy the text using the button on the "Installing Cypress" pop-up.
+             * Use realClick function from cypress-real-events repo,
+             * because regular click does not work.
+             */
             cy.get(mainPage.copyToClipboardButton).realClick()
           })
       })
-    
+
     // Verify the copied text is correct
     cy.window().then((win) => {
       win.navigator.clipboard.readText().then((text) => {

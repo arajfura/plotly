@@ -21,8 +21,8 @@ describe('Plotly test spec', () => {
 
     cy.intercept({
       method: 'GET',
-      url: constants.endpoint.index,
-    }).as('indexLoaded')
+      url: constants.endpoint.editorFileTree,
+    }).as('editorFileTreeLoaded')
 
     // Visit the starting page
     cy.visit(constants.url.main)
@@ -49,9 +49,13 @@ describe('Plotly test spec', () => {
   })
 
   it('can copy text when pressing "npm install cypress"', () => {
-    // Wait for API responses then click "npm install cypress" button to open the popup
+    /**
+     * Wait for API responses, then click "npm install cypress" button to open the popup.
+     * Note: I found that without the forced wait time the button will not open the popup when clicked.
+     * It seems the page has to "settle" before it can be interacted with and Cypress is just too fast.
+     */
     cy.wait('@installButtonLoaded')
-      .wait('@indexLoaded')
+      .wait('@editorFileTreeLoaded')
       .then(() => {
         cy.contains(constants.text.npmInstallCypress)
           .click()

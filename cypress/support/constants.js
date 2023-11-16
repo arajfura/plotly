@@ -1,8 +1,8 @@
 const borderColourJade200 = 'border-jade-200'
 
 const endpoint = {
-  index: 'https://www.cypress.io/_astro/index.01be2337.js',
-  installModalButon: 'https://www.cypress.io/_astro/InstallModalButton.adb466b9.js',
+  editorFileTree: '*/EditorFileTree*',
+  installModalButon: '*/InstallModalButton*',  
 }
 
 const text = {

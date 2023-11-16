@@ -1,14 +1,9 @@
-const { before, beforeEach } = require('mocha')
+const { beforeEach } = require('mocha')
 import 'cypress-real-events'
 import * as constants from '../support/constants'
 import mainPage from '../support/mainPage'
 
 describe('Plotly test spec', () => {
-  before(() => {
-    // Allow Cypress to read from the clipboard
-    mainPage.enableClipboardReadWrite()
-  })
-
   beforeEach(() => {
     /**
      * Set up intercepts to wait for an API response to get a few elements.
@@ -48,7 +43,9 @@ describe('Plotly test spec', () => {
     cy.contains(constants.text.aboutUs).should('be.visible')
   })
 
-  it('can copy text when pressing "npm install cypress"', () => {
+  it('can copy text when pressing "npm install cypress"', { browser: 'chrome' }, () => {
+    // Allow Cypress to read/write from the clipboard
+    mainPage.enableClipboardReadWrite()
     /**
      * Wait for API responses, then click "npm install cypress" button to open the popup.
      * Note: I found that without the forced wait time the button will not open the popup when clicked.
